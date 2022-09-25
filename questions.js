@@ -1,0 +1,3 @@
+const questionListArray = ["a","例1","c"];
+let a = ["good morning","hello","good evening"];
+let 例1 = [{"questionSentence":"ちいかわに存在しないキャラクターは次のうちどれ？","wrongSelections":["うさぎ","ラッコ","ももんが","スフィンクス"],"correctSelections":["いぬ"]},{"questionSentence":"スピリタスのアルコール度数は？","wrongSelections":["94%","95%","97%","98%"],"correctSelections":["96%"]},{"questionSentence":"次のうち果物ではないものはどれ","wrongSelections":["オリーブ","アボカド"],"correctSelections":["ばなな"]}];

@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Serif JP', serif;
+}
+body{
+    min-height: calc(100vh - 50px);
+    margin-top: 50px;
+    background-color: #C2E5F2;
+    position: relative;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(to bottom right, #0FC9F2, #72CEF2);
+    z-index: 1;
+}
+.f-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+}
+h1{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+.f-box-small{
+    flex-shrink: 2;
+}
+.f-box-large{
+    flex-shrink: 1;
+}
+header .f-box{
+    height: 100%;
+    flex-basis: 100%;
+}
+#menuButton{
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: 3px;
+}
+#menuButton::before,
+#menuButton::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    margin-left: 3%;
+    transition: 0.5s;
+}
+#menuButton::before{
+    top: 5px;
+}
+#menuButton::after{
+    bottom: 5px;
+}
+#menuCheck:checked ~ header #navigation-bar #menuButton::before{
+    transform: rotate(45deg);
+    top: 13px;
+}
+#menuCheck:checked ~ header #navigation-bar #menuButton::after{
+    transform: rotate(-45deg);
+    bottom: 13px;
+}
+#menuCheck{
+    display: none;
+}
+#setting{
+    position: fixed;
+    top: 50px;
+    right: max(-300px, -100%);
+    width: min(300px, 100%);
+    height: calc(100vh - 50px);
+    background-color: white;
+    transition: 0.5s;
+}
+#menuCheck:checked ~ #setting{
+    right: 0;
+}
+.topic{
+    width: 96%;
+    margin-top: 5px;
+    margin-left: 2%;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    padding: 5px;
+}
+.choices{
+    margin-left: 25px;
+}
+#setting button{
+    display: block;
+    width: 96%;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: 2%;
+    font-size: 30px;
+    font-weight: 500;
+    border: none;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+}
+#question-create-display{
+    width: 60%;
+    margin-left: 20%;
+    padding-top: 5px;
+    display: none;
+}
+#question-sentence-create{
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    resize: none;
+    height: 6em;
+    padding: 5px;
+}
+#number-of-wrong,
+#number-of-correct{
+    margin-top: 5px;
+    width: 50%;
+}
+.answers-create{
+    width: 100%;
+    margin-top: 5px;
+}
+li input[type="text"]{
+    width: 100%;
+}
+#create-question,
+#create-file{
+    margin-top: 5px;
+    width: 100%;
+}
+#output-file-name{
+    margin-top: 15px;
+    width: 100%;
+}
+#download-file{
+    display: block;
+    width: 100%;
+    text-align: center;
+    border: solid 1px black;
+    border-radius: 2px;
+    margin-top: 5px;
+    background-color: white;
+}
+#created-question{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 18%;
+    display: none;
+}
+#created-question-list{
+    list-style-position: inside;
+}
+#created-question-list li{
+    border-bottom: solid 1px gray;
+}
+.question-button{
+    display: block;
+    width: 200px;
+    height: 200px;
+    border: none;
+    background-color: #0FC9F2;
+    margin: 5px;
+}
+#run-question{
+    width: 60%;
+    margin-left: 20%;
+}
+.question-display{
+    display: none;
+    width: 100%;
+}
+.question-sentence{
+    text-align: center;
+    font-size: 1.2em;
+}
+.selection{
+    display: block;
+    width: 80%;
+    min-height: 30px;
+    line-height: 30px;
+    margin-left: 10%;
+    margin-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 2px;
+    border: solid black 1px;
+    background-color: #72CEF2;
+}

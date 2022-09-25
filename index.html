@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>QUIZ</title>
+</head>
+<body>
+    <input type="checkbox" id="menuCheck">
+    <header class="f-container">
+        <div class="f-box f-box-small"></div>
+        <div class="f-box f-box-large"><h1>QUIZ</h1></div>
+        <div class="f-box f-box-small" id="navigation-bar"><label for="menuCheck" id="menuButton"></label></div>
+    </header>
+    <div id="setting">
+        <div class="topic">
+            <h3>出題順番</h3>
+            <p class="choices"><label><input type="radio" id="numerical" name="order-of-question" onclick="setOrderOfQuestions()" checked>番号順</label></p>
+            <p class="choices"><label><input type="radio" id="random" name="order-of-question" onclick="setOrderOfQuestions()">ランダム</label></p>
+        </div>
+        <div class="topic">
+            <h3>出題形式</h3>
+            <p class="choices"><label><input type="radio" id="selection" name="question-format" onclick="setQuestionFormat()" checked>選択</label></p>
+            <p class="choices"><label><input type="radio" id="writing" name="question-format" onclick="setQuestionFormat()">記述</label></p>
+        </div>
+        <button onclick="showQuestionCreateDisplay(this)" id="question-create">問題作成</button>
+    </div>
+    <div id="created-question">
+        <ol id="created-question-list"></ol>
+    </div>
+    <div id="question-create-display">
+        <textarea type="text" placeholder="問題文" id="question-sentence-create"></textarea>
+        <input type="number" min="0" placeholder="間違いの数" onblur="setWrongAnswerCreateInput(this.value)" id="number-of-wrong"><input type="number" min="1" placeholder="正答の数" onblur="setCorrectAnswerCreateInput(this.value)" id="number-of-correct">
+        <div class="answers-create">
+            <ol id="correct-answers-create"></ol>
+        </div>
+        <div class="answers-create">
+            <ol id="wrong-answers-create"></ol>
+        </div>
+        <button id="create-question" onclick="createQuestion()">問題追加</button>
+        <input type="text" id="output-file-name" placeholder="変数名を入力(大文字小文字アルファベット,日本語,数字が使用可能)">
+        <button id="create-file" onclick="outputJSFile()">ファイル作成&コピー</button>
+    </div>
+    <div id="question-list" class="f-container"></div>
+    <div id="run-question"></div>
+    <script src="script.js"></script>
+    <script src="questions.js"></script>
+</body>
+</html>
